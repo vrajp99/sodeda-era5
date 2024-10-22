@@ -1,0 +1,38 @@
+[project]
+name = "sodeda-era5"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Matthias Meyer", email = "matthias.meyer@sdsc.ethz.ch" }
+]
+dependencies = [
+    "xarray>=2024.9.0",
+    "zarr>=2.18.3",
+    "gradio>=5.3.0",
+    "geoviews>=1.13.0",
+    "gcsfs>=2024.10.0",
+    "compress-pickle>=2.1.0",
+    "python-dotenv>=1.0.1",
+    "s3fs>=2024.10.0",
+    "orjsonl>=1.0.0",
+    "tqdm>=4.66.5",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+"sodeda-era5" = "sodeda_era5:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sodeda_era5"]
