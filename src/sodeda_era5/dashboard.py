@@ -4,6 +4,7 @@ import geoviews as gv
 from .flow import Era5Flow
 import holoviews as hv 
 import pandas as pd 
+# from holoviews.operation.datashader import regrid
 
 hv.extension('bokeh')
 
@@ -39,6 +40,10 @@ def plot_map(time_start, time_end, latitude_start, latitude_end, longitude_start
             alpha=0.6,
         )
     )
+    
+    # using datashader might improve plotting
+    
+    # plot_data = regrid(plot_data)
 
     plot_map = gv.tile_sources.OSM().opts(
         title=f'ERA-5 ',
@@ -51,8 +56,9 @@ def plot_map(time_start, time_end, latitude_start, latitude_end, longitude_start
 
     return  bokeh_plot
 
-# todo build input boxes from scope 
+# TODO: maybe build input boxes from scope?
 scope = flow.scope()
+print(scope)
 
 with gr.Blocks() as demo:
     with gr.Column():

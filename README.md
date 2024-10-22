@@ -45,5 +45,14 @@ A simple example is given by the deskriptor set in `deskriptors.jsonl`. This dat
 
 To preload run
 ```
-rye run sodeda-era5
+rye run sodeda-era5 preload
 ```
+
+## Dashboard
+A gradio dashboard is available with 
+
+```
+rye run sodeda-era5 dashboard
+```
+
+Note: Don't try to load the full dataset. I can only display one timestep at a time anyway. Even the full globe for one timestep takes quite some time. I assume, that's mainly due to plotting and transfering to browser, and not the data fetching.
