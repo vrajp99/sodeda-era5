@@ -1,4 +1,18 @@
 # sodeda-era5
+
+A proof-of-concept software-defined dataset (sodeda) build in the context of the SDSC hackathon 2024.
+
+The sodeda consists of these components
+- A set of deskriptors
+    - Each deskriptor describes an element of the dataset. 
+    - In this case, hourly temperature measurements in the area of Zürich.
+- A flow
+    - A flow is a processing pipeline which loads data from a data source and optionally it into the desired representation 
+    - In this case, we load ERA5 data from ARCO-ERA5 and convert it into a xarray DataArray.
+- A storage
+    - The storage is used to cache individual data samples close to the user's compute environment for faster access during tasks such as ML training.
+    - In this case, we use an S3 storage but local cache could be used as well
+
 ## Quickstart
 - Clone the repo and open its folder in a terminal
 - [Install rye](https://rye.astral.sh/guide/installation/), then
