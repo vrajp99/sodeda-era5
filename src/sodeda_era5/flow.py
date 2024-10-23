@@ -12,9 +12,12 @@ load_dotenv(find_dotenv())
 
 class Era5Flow():
     def __init__(self,store_samples=True):
+        cache_storage = os.environ.get("LOCAL_CACHE",None)
         fs = fsspec.filesystem(
             "s3", endpoint_url=os.environ.get("S3_ENDPOINT_URL",None), profile=os.environ["S3_PROFILE"]
         )
+        if cache_storage is not None:
+            fs = fsspec.filesystem("filecache", fs=fs, cache_storage=cache_storage)
         self.store = fs.get_mapper(f'{os.environ["S3_BUCKET_NAME"]}/f"{os.environ["S3_BASE_KEYNAME"]}/')
         self.loader = ARCO_ERA5()
         self.store_samples = store_samples
