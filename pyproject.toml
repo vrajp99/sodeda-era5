@@ -3,7 +3,8 @@ name = "sodeda-era5"
 version = "0.1.0"
 description = "Add your description here"
 authors = [
-    { name = "Matthias Meyer", email = "matthias.meyer@sdsc.ethz.ch" }
+    { name = "Matthias Meyer", email = "matthias.meyer@sdsc.ethz.ch" },
+    { name = "Vraj Patel", email = "vpatel@ethz.ch}
 ]
 dependencies = [
     "xarray>=2024.9.0",
@@ -22,17 +23,3 @@ requires-python = ">= 3.8"
 
 [project.scripts]
 "sodeda-era5" = "sodeda_era5:main"
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.rye]
-managed = true
-dev-dependencies = []
-
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/sodeda_era5"]
