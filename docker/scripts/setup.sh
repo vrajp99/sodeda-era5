@@ -4,4 +4,4 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 # Activate
 source ~/miniconda3/bin/activate
-conda create -y -c conda-forge --name runenv --file /scripts/requirements.txt && conda clean -afy
+conda create -y -c conda-forge --name runenv --file /scripts/requirements.txt
