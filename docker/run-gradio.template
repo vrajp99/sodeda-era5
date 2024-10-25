@@ -1,5 +1,3 @@
-#!/bin/bash
-REPO_DIR="/home/vpatel/hackathon/sodeda-era5"
 AWS_CRED_DIR="$HOME/.aws/"
 docker run \
    -v $REPO_DIR:/repo \
