@@ -4,7 +4,7 @@ COPY ./scripts/* /scripts/
 COPY ./requirements.txt /scripts/
 
 RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
-
+ENV PYTHONDONTWRITEBYTECODE=true
 
 SHELL ["/bin/bash", "-e"]
 RUN /scripts/setup.sh
